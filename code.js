@@ -5,9 +5,7 @@ let pokemons = [
     {name:"charmander",source:"pokemon/charmander.png"},
     {name:"banana man",source:"pokemon/bananaman1.png"},
 ]
-$.getJSON("https://pokeapi.co/api/v2/pokemon",data=>{
-    console.log(data)
-})
+
 //pick random pokemon 
 let current_pokemon
 let last_current_pokemon
