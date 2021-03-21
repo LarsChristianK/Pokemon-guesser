@@ -1,0 +1,250 @@
+body{
+    margin-top:100px;
+}
+center{
+    
+    max-width: 500px;
+    margin: auto;
+    background: #FFFFFF;
+}
+#pokemon-app{
+    margin-top:-2000px;
+}
+
+
+#button_guess{
+    width: 230px;
+    height: 90px;
+    border: none;
+    outline: none;
+    padding-bottom:10px;
+    background: #43F426;
+    border-radius: 49px;
+    /* Guess */
+
+    position:relative;
+
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 42px;
+
+    color: #000000;
+
+
+    
+}
+#button_guess:active{
+    top:5px; 
+}
+
+
+#button_skip{
+
+    width: 230px;
+    height: 90px;
+    border: none;
+    outline: none;
+    margin-left:36px;
+    padding-bottom:10px;
+    background: #F32F2F;
+    border-radius: 49px;
+
+    position:relative;
+    
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 42px;
+
+    color: #ffffff;
+
+}
+
+#button_skip:active{
+    top:5px;
+}
+
+
+
+#button_name{
+    width: 500px;
+    height: 90px;
+    border: none;
+    outline: none;
+
+    background: #c4c4c4;
+    border-radius: 48px;
+
+    /* Pokemon name */
+
+
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 42px;
+
+    color: rgba(0, 0, 0, 0.40);
+
+
+}
+
+
+
+.head_text{
+    width: 573px;
+    height: 89px;
+    margin-left:-38px;
+}
+#pokemon_pic{
+    width: 270px;
+    height: 242px;
+    
+}
+
+
+#head_score{
+
+    background: #C4C4C4;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 52px;
+
+    color: #000000;
+}
+
+
+
+/*
+
+
+----------------------------------------------------------------------------------
+
+
+
+*/
+
+
+
+.scrboard{
+    max-width: 300px;
+    margin-left: 100px;
+    position: relative;
+    height: 2000px;
+    
+}
+#highscore_text{
+    margin-top:70px;
+    padding-left:60px;
+    height: 50px;
+    background-color: #c4c4c4;
+    border-radius: 50px;
+
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 50px;
+}
+#highscore_object_box{
+    padding-left:75px;
+    background-color: #c4c4c4;
+    border-radius: 50px;
+    font-family: 'Roboto', sans-serif;
+    font-size:30px;
+    margin-top:10px;
+    padding-top:30px;
+    padding-bottom:1px;
+}
+#highscore_object_box1{
+    margin-top:60px;
+    padding-left:75px;
+    background-color: #c4c4c4;
+    border-radius: 50px;
+    font-family: 'Roboto', sans-serif;
+    font-size:30px;
+    padding-top:20px;
+    padding-bottom:20px;   
+}
+#highscore_object_box2{
+    margin-top:10px;
+    padding:105px;
+    position:relative;
+    background-color: #c4c4c4;
+    border-radius: 50px;
+    font-family: 'Roboto', sans-serif;
+    font-size:30px;
+    padding-top:20px;
+    padding-bottom:20px; 
+    height: 80px;
+    border: none;
+    outline: none;
+    text-align: center;
+}
+#highscore_object_box2:active{
+    top:5px;
+} 
+
+#score_board_inner_element_name{
+    padding:7px;
+    padding-left:30px;
+    padding-right: 30px;
+    background-color: #8b8b8b;
+    border-radius: 50px;
+    margin-left: -42px;
+    float: left;
+}
+#score_board_inner_element_score{
+    color:white;
+    padding:7px;
+    max-width: 180px;
+    background-color: #3b3b3b;
+    border-radius: 50px;
+    text-align: right;
+    
+    
+}
+#scrboard_input_name{
+    padding:7px;
+    padding-left:30px;
+    padding-right: 30px;
+    background-color: #8b8b8b;
+    border-radius: 50px;
+    margin-left: -42px;
+    max-width: 100px;
+    max-height: 35px;
+
+    font-family: 'Roboto', sans-serif;
+    font-size:30px;
+    border: none;
+    outline: none;
+    text-align: center;
+}
+#scrboard_input_score{
+    color:white;
+    padding:7px;
+    max-width: 180px;
+    background-color: #3b3b3b;
+    border-radius: 50px;
+    margin-top:-50px;
+    max-height: 35px;
+
+    font-family: 'Roboto', sans-serif;
+    font-size:30px;
+    border: none;
+    outline: none;
+    text-align: right;
+}
+
+
+

@@ -1,0 +1,114 @@
+center{
+    max-width: 500px;
+    margin: auto;
+    background: #FFFFFF;
+}
+.scrboard{
+    max-width: 300px;
+    margin-left: 200px;
+    
+    
+    
+}
+#highscore_text{
+    margin-top:70px;
+    padding-left:60px;
+    height: 50px;
+    background-color: #c4c4c4;
+    border-radius: 50px;
+
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 50px;
+}
+#highscore_object_box{
+    padding-left:75px;
+    background-color: #c4c4c4;
+    border-radius: 50px;
+    font-family: 'Roboto', sans-serif;
+    font-size:30px;
+    margin-top:10px;
+    padding-top:30px;
+    padding-bottom:1px;
+}
+#highscore_object_box1{
+    margin-top:60px;
+    padding-left:75px;
+    background-color: #c4c4c4;
+    border-radius: 50px;
+    font-family: 'Roboto', sans-serif;
+    font-size:30px;
+    padding-top:20px;
+    padding-bottom:20px;   
+}
+#highscore_object_box2{
+    margin-top:10px;
+    padding:105px;
+    position:relative;
+    background-color: #c4c4c4;
+    border-radius: 50px;
+    font-family: 'Roboto', sans-serif;
+    font-size:30px;
+    padding-top:20px;
+    padding-bottom:20px; 
+    height: 80px;
+    border: none;
+    outline: none;
+    text-align: center;
+}
+#highscore_object_box2:active{
+    top:5px;
+} 
+
+#score_board_inner_element_name{
+    padding:7px;
+    padding-left:30px;
+    padding-right: 30px;
+    background-color: #8b8b8b;
+    border-radius: 50px;
+    margin-left: -42px;
+    float: left;
+}
+#score_board_inner_element_score{
+    color:white;
+    padding:7px;
+    max-width: 180px;
+    background-color: #3b3b3b;
+    border-radius: 50px;
+    text-align: right;
+    
+    
+}
+#scrboard_input_name{
+    padding:7px;
+    padding-left:30px;
+    padding-right: 30px;
+    background-color: #8b8b8b;
+    border-radius: 50px;
+    margin-left: -42px;
+    max-width: 100px;
+    max-height: 35px;
+
+    font-family: 'Roboto', sans-serif;
+    font-size:30px;
+    border: none;
+    outline: none;
+    text-align: center;
+}
+#scrboard_input_score{
+    color:white;
+    padding:7px;
+    max-width: 180px;
+    background-color: #3b3b3b;
+    border-radius: 50px;
+    margin-top:-50px;
+    max-height: 35px;
+
+    font-family: 'Roboto', sans-serif;
+    font-size:30px;
+    border: none;
+    outline: none;
+    text-align: right;
+}
