@@ -1,3 +1,0 @@
---------todo--------
-integrate pokeAPI -- done
-local storage -- working on
