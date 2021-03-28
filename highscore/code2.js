@@ -66,10 +66,10 @@
         ref.once("value",data=>{
             if(!data.val()){}else{
             firebase_scores.push(data.val())
-            //console.log(firebase_scores[0])
+            console.log(firebase_scores[0])
             
 
-            //console.log(firebase_scores[0].sort(compareValues('score',"desc")))
+            console.log(firebase_scores[0].sort(compareValues('score',"desc")))
 
             for(let s in firebase_scores[0]){
                 let text_name = document.createTextNode(firebase_scores[0][s].name)

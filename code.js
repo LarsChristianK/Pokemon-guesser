@@ -1,15 +1,42 @@
-//declare pokemon
-let pokemons = [
-    {name:"pikachu",source:"pokemon/pikachu.png"},
-    {name:"magikarp",source:"pokemon/magikarp1.png"},
-    {name:"charmander",source:"pokemon/charmander.png"},
-    {name:"banana man",source:"pokemon/bananaman1.png"},
-]
+function getJSON(url,output,error){
+    let link = new XMLHttpRequest()
+    link.open("GET",url)
+    
+    link.onreadystatechange = function(){
+        if(link.readyState === XMLHttpRequest.DONE){
+            if(link.status === 200){
+                output(JSON.parse(link.responseText))
+            }else{
+                error("error")
+            }
+        }
+    }
+    link.send(null)
+}
 
+//declare pokemon
+let pokemons
+
+getJSON("https://pokeapi.co/api/v2/pokemon?limit=500",data1=>{
+    pokemons = data1.results;
+    console.log(pokemons)
+})
 //pick random pokemon 
 let current_pokemon
 let last_current_pokemon
-let score = 0
+
+//get score from localstorage
+let score
+if(localStorage.getItem("score")){
+    score = JSON.parse(localStorage.getItem("score")).score
+    console.log("locally stored score " + JSON.parse(localStorage.getItem("score")).score)
+}else{
+    score = 0
+    console.log("no locally stored score")
+}
+
+
+
 let button_name_placeholder = "Pokemon name"
 
 function randomizePokemon(){
@@ -36,9 +63,12 @@ function Skip(){
 function Guess(){
     let user_guess = document.getElementById("button_name").value
     if(user_guess.toUpperCase() == pokemons[current_pokemon].name.toUpperCase()){
+        //right guess
         document.getElementById("button_name").style.backgroundColor="#6bf682"
         document.getElementById("button_name").placeholder = ""
         score++
+        localStorage.setItem("score",JSON.stringify({score:score}))
+        document.getElementById("pokemon_pic").src = "pokemon/debut-light.png"
         setTimeout(() => {
             randomizePokemon();
             document.getElementById("button_name").value = null;
@@ -46,6 +76,7 @@ function Guess(){
             document.getElementById("button_name").placeholder = button_name_placeholder
         }, 300);
     }else{
+        //wrong guess
         document.getElementById("button_name").style.backgroundColor="#fba4a4"
         document.getElementById("button_name").placeholder = ""
         document.getElementById("button_name").value = null;
@@ -59,7 +90,10 @@ function Guess(){
 
 //update it to the page
 function update(){
-    document.getElementById("pokemon_pic").src = pokemons[current_pokemon].source
+    getJSON(pokemons[current_pokemon].url,data=>{
+        document.getElementById("pokemon_pic").src = data.sprites.front_default
+        console.log(pokemons[current_pokemon].name)
+    }) 
     document.getElementById("head_score").innerHTML = score;
     document.getElementById("scrboard_input_score").innerHTML = score;
 }
@@ -154,18 +188,35 @@ function set_scores_database(nm,scr){
         firebase_got_length = true
     })
     
-    
+    firebase_scores.push({name:nm,score:scr})
+    let text_name = document.createTextNode(nm)
+    let text_score = document.createTextNode(scr)
+
+    let br = document.createElement("br")
+    let div = document.createElement("div")
+    div.id = "score_board_inner_element_name"
+    div.innerHTML =""
+    div.appendChild(text_name)
+    let name_element = document.getElementById("highscore_object_box").appendChild(div)
+           
+            
+    div = document.createElement("div")
+    div.id = "score_board_inner_element_score"
+    div.appendChild(text_score)
+    let score_element = document.getElementById("highscore_object_box").appendChild(div)
+    document.getElementById("highscore_object_box").appendChild(br)
 }
 
 function get_scores_database(){
     let ref = database.ref("score-board")
     let firebase_score_length
     ref.once("value",data=>{
+        if(!data.val()){return}
         firebase_scores.push(data.val())
-        console.log(firebase_scores[0])
+        //console.log(firebase_scores[0])
         
 
-        console.log(firebase_scores[0].sort(compareValues('score',"desc")))
+        firebase_scores[0].sort(compareValues('score',"desc"))
 
         for(let s in firebase_scores[0]){
             let text_name = document.createTextNode(firebase_scores[0][s].name)
@@ -174,6 +225,7 @@ function get_scores_database(){
             let br = document.createElement("br")
             let div = document.createElement("div")
             div.id = "score_board_inner_element_name"
+            div.innerHTML =""
             div.appendChild(text_name)
             let name_element = document.getElementById("highscore_object_box").appendChild(div)
            
