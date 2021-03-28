@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>stuff</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+        <script src="http://www.openjs.com/scripts/events/keyboard_shortcuts/shortcut.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/firebase@6.2.0-0/firebase-app.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/firebase@6.2.0-0/firebase-database.js"></script>    
+        <script src="code.js"></script>    
+    </head>
+    <body onload="setup()"> 
+        <div style="position:relative;">
+            <div class = "scrboard">
+                <div id = "highscore_object_box1">
+                    <input id="scrboard_input_name" placeholder="name">
+                    <div id="scrboard_input_score">0</div>
+                </div>   
+            
+                    <button  id = "highscore_object_box2" onclick="addScore()">submit</button>
+        
+                <h1 id = "highscore_text">highscores</h1>
+                <div id = "highscore_object_box">
+                    
+                </div>
+            </div>
+            <div id = "pokemon-app">
+                <center>
+                    <img class ="head_text" src ="pokemon/name.png"><br>
+                    <h1 id="head_score">1</h1>
+                    <img id="pokemon_pic" src = "pokemon/debut-light.png"><br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <input id="button_name" placeholder="Pokemon name"><br>
+                    <div class="buttons"><br>
+                        <button id="button_guess" accesskey="h" onclick="Guess()">guess</button>
+                        <button id="button_skip"  onclick="Skip()">skip</button>
+                    </div>
+                </center>
+            </div>
+        </div>
+    </body>
+</html>
